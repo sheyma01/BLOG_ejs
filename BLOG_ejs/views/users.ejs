@@ -1,0 +1,27 @@
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Members</title>
+        <link rel="stylesheet" href="/style.css"/>
+    </head>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>   
+        <h2>All Members</h2>
+        <br/>
+        <% if(users.length > 0){ %>
+            <% users.forEach(user=>{ %>
+             <a class ="single" href="/users/<%=user._id%>">
+                 <h3 class="Firstname" id="Firstname"><%= user.Firstname%> </h3>
+             </a>                    
+                 <p class="courriel" id="courriel"><%= user.courriel%></p>
+            <% }) %>
+        <% }else{ %>
+             <p>There are no users to Show...</p>
+       <%  } %>
+       <%- include("./partials/footer.ejs") %>
+      
+    </body>
+</html>

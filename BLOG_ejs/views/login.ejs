@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hello2</title>
+        <link rel="stylesheet" href="/style2.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <!-- form -->
+            <form id="form" action="/login" method="post" >
+              <!-- form heading -->
+              <h3>login</h3>
+              <!-- form inputs -->
+              <fieldset>
+                <label for="Firstname">FirstName:</label>
+                <input type="text" name="Firstname" id="Firstname" required>
+            </fieldset>
+              <fieldset>
+                  <label for="courriel">Email address:</label>
+                  <input type="email" name="courriel" id="courriel" required>
+              </fieldset>
+              
+              <fieldset>
+                <button name="submit" type="submit" id="submit">submit</button>
+              </fieldset>
+              <!-- attribution -->
+              <p class="copyright">Don't have an account? <a href="/u">signup</a></p>
+              
+            </form>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Delete</title>
+        <link rel="stylesheet" href="/style.css"/>
+    </head>
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="details content">
+    <h2>Details</h2>
+    <div class="content">
+      <p><%= user.body %></p>
+    </div>
+    <a class="delete1" data-doc="<%= user._id%>">delete</a>  
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+  <script>
+    const corbeille = document.querySelector('a.delete1');
+    corbeille.addEventListener('click', (e)=>{      
+      const route = `/users/${corbeille.dataset.doc}`
+        fetch(route, {
+          method:'DELETE',
+        })
+        .then(response => response.json())
+        //.then(data => console.log(data))
+        .then(data => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+    })
+  </script>
+  
+</body>
+</html>
